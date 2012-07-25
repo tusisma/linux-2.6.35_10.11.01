@@ -13,6 +13,8 @@
 
 #include <linux/posix_types.h>
 
+#define DEBUG
+
 #ifdef __KERNEL__
 
 typedef __u32 __kernel_dev_t;
