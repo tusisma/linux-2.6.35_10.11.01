@@ -1,4 +1,3 @@
-obj-$(CONFIG_MXC_IPU_V3)			+= ipu_mxc/
 obj-$(CONFIG_MXC_IPU_V1)			+= ipu/
 obj-$(CONFIG_MXC_IPU_V3)			+= ipu3/
 obj-$(CONFIG_MXC_SSI)               	+= ssi/
