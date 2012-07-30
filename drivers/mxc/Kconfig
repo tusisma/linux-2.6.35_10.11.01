@@ -19,6 +19,7 @@ config MXC_IPU
 
 source "drivers/mxc/ipu/Kconfig"
 source "drivers/mxc/ipu3/Kconfig"
+source "drivers/mxc/ipu_mxc/Kconfig"
 
 source "drivers/mxc/ssi/Kconfig"
 source "drivers/mxc/dam/Kconfig"
