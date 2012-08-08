@@ -56,7 +56,8 @@
  *  more details.
  */
 
-#undef FBCONDEBUG
+//#undef FBCONDEBUG
+#define FBCONDEBUG
 
 #include <linux/module.h>
 #include <linux/types.h>

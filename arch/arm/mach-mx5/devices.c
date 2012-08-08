@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2008-2010 Freescale Semiconductor, Inc. All Rights Reserved.
  */
@@ -1507,6 +1508,7 @@ static __init void mxc_init_scc_iram(void)
 	long cur_ns = 0;
 	long start_ns = 0;
 
+	printk(KERN_ERR "MBT: mxc_init_scc_iram(void) \n");
 	scc_base = ioremap((uint32_t) scc_resources[0].start, 0x140);
 	if (scc_base == NULL) {
 		printk(KERN_ERR "FAILED TO MAP SCC REGS\n");
@@ -1815,8 +1817,12 @@ int __init mxc_init_devices(void)
 	}
 
 
-	if (cpu_is_mx51() || cpu_is_mx53())
+	if (cpu_is_mx51() || cpu_is_mx53()){
 		mxc_init_scc_iram();
+		if (platform_device_register(&mxc_iim_device) < 0)
+		  dev_err(&mxc_iim_device.dev,
+			"Unable to register mxc iim device\n");
+	}
 	return 0;
 }
 postcore_initcall(mxc_init_devices);
