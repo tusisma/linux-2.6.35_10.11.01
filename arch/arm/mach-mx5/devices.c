@@ -1819,9 +1819,12 @@ int __init mxc_init_devices(void)
 
 	if (cpu_is_mx51() || cpu_is_mx53()){
 		mxc_init_scc_iram();
-		if (platform_device_register(&mxc_iim_device) < 0)
+		printk(KERN_ERR "MBT: imm: %d\n",platform_device_register(&mxc_iim_device));
+		/* MBT: It doen't seem to work...The kernel won't boot.
+		  if (platform_device_register(&mxc_iim_device) < 0)
 		  dev_err(&mxc_iim_device.dev,
 			"Unable to register mxc iim device\n");
+		*/
 	}
 	return 0;
 }
